@@ -1,9 +1,70 @@
+import './App.css';
+import React, { useState, useEffect } from 'react';
+import TransactionTable from './components/TransactionTable';
+import TransactionForm from './components/TransactionForm';
 
+const API_URL = 'https://my-json-server.typicode.com/MaxLubale/react-code-challenge-1/transactions';
 
-function App() {
+const App = () => {
+  const [transactions, setTransactions] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = () => {
+    fetch(API_URL)
+      .then((response) => {
+        
+        return response.json();
+      })
+      .then((data) => setTransactions(data))
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  };
+
+  const addTransaction = (newTransaction) => {
+    setTransactions([...transactions, newTransaction]);
+  };
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+  };
+
+  const deleteTransaction = (id) => {
+    const updatedTransactions = transactions.filter(
+      (transaction) => transaction.id !== id
+    );
+    setTransactions(updatedTransactions);
+  };
+
+  const sortTransactions = (key) => {
+    setTransactions([...transactions].sort((a, b) => a[key].localeCompare(b[key])));
+  };
+
+  const filteredTransactions = transactions.filter((transaction) =>
+    transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div>Home</div>
-  )
-}
+    <div>
+      <h1>Bank Transactions</h1>
+      <TransactionForm addTransaction={addTransaction} />
+      <input
+        type="text"
+        placeholder="Search transactions..."
+        value={searchTerm}
+        onChange={(e) => handleSearch(e.target.value)}
+      />
+      <TransactionTable
+        transactions={filteredTransactions}
+        onDelete={deleteTransaction}
+        onSort={sortTransactions}
+      />
+    </div>
+  );
+};
 
-export default App
+export default App;
