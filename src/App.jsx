@@ -34,13 +34,6 @@ const App = () => {
     setSearchTerm(term);
   };
 
-  const deleteTransaction = (id) => {
-    const updatedTransactions = transactions.filter(
-      (transaction) => transaction.id !== id
-    );
-    setTransactions(updatedTransactions);
-  };
-
   const sortTransactions = (key) => {
     setTransactions([...transactions].sort((a, b) => a[key].localeCompare(b[key])));
   };
@@ -61,7 +54,6 @@ const App = () => {
       />
       <TransactionTable
         transactions={filteredTransactions}
-        onDelete={deleteTransaction}
         onSort={sortTransactions}
       />
     </div>

@@ -16,7 +16,7 @@ const TransactionTable = ({ transactions, onDelete }) => {
 
 
     return (
-        <table>
+        <table className='table'>
           <thead>
             <tr>
               <th>

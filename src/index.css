@@ -5,3 +5,9 @@
 .form{
   border-color: grey;
 }
+.table{
+  padding: auto;
+  padding-top: 100px;
+  background-color: rgb(255, 228, 196);
+  position: relative;
+}
