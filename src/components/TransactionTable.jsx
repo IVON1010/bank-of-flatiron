@@ -44,3 +44,5 @@ const TransactionTable = ({ transactions, onDelete }) => {
     </table>
   );
 };
+
+export default TransactionTable;
