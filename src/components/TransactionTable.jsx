@@ -28,3 +28,19 @@ const TransactionTable = ({ transactions, onDelete }) => {
               <th>Action</th>
             </tr>
           </thead>
+          <tbody>
+        {transactions.map((transaction) => (
+          <tr key={transaction.id}>
+            <td>{transaction.description}</td>
+            <td>{transaction.category}</td>
+            <td>{transaction.amount}</td>
+            <td>{transaction.date}</td>
+            <td>
+              <button onClick={() => onDelete(transaction.id)}>Delete</button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
