@@ -12,4 +12,19 @@ const TransactionTable = ({ transactions, onDelete }) => {
       }
       setSortBy(property);
     };
-  
+
+
+    return (
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <button onClick={() => handleSort('description')}>Description</button>
+              </th>
+              <th>
+                <button onClick={() => handleSort('category')}>Category</button>
+              </th>
+              <th>Amount</th>
+              <th>Action</th>
+            </tr>
+          </thead>
