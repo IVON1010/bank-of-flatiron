@@ -1,4 +1,5 @@
 import './App.css';
+import './index.css'
 import React, { useState, useEffect } from 'react';
 import TransactionTable from './components/TransactionTable';
 import TransactionForm from './components/TransactionForm';
@@ -50,7 +51,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Bank Transactions</h1>
+      <h1 className='bank'>Bank Transactions</h1>
       <TransactionForm addTransaction={addTransaction} />
       <input
         type="text"

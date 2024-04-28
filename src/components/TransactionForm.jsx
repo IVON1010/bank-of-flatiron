@@ -28,7 +28,7 @@ const TransactionForm = ({ addTransaction }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='form'onSubmit={handleSubmit}>
       <label>
         Description:
         <input
