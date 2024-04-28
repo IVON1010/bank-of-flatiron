@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 
 const TransactionTable = ({ transactions, onDelete }) => {
     const [sortBy, setSortBy] = useState(null);
