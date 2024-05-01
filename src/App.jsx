@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import TransactionTable from './components/TransactionTable';
 import TransactionForm from './components/TransactionForm';
 
-const API_URL = 'https://my-json-server.typicode.com/MaxLubale/react-code-challenge-1/transactions';
+const API_URL = 'http://localhost:3000/transactions';
 
 const App = () => {
   const [transactions, setTransactions] = useState([]);
