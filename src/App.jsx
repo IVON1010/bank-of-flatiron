@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import TransactionTable from './components/TransactionTable';
 import TransactionForm from './components/TransactionForm';
 
-const API_URL = 'http://localhost:3000/transactions';
+const API_URL = 'https://my-json-server.typicode.com/IVON1010/bank-of-flatiron/transactions';
 
 const App = () => {
   const [transactions, setTransactions] = useState([]);
