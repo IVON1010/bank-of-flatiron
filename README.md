@@ -40,7 +40,7 @@ JavaScript
 CSS
 
 ## Live link
-API_URL = 'https://my-json-server.typicode.com/IVON1010/bank-of-flatiron/transactions';
+API_URL = 'https://bank-of-flatiron-j07k5sxpp-ivons-projects.vercel.app'
 
 ## API Used
 Bank of Flatiron Transactions API
